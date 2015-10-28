@@ -12,14 +12,18 @@ $ docker run --name mysql-zmara \
 
 
 # Zmara
-=======
+
 backup full:
+```sh
 $ mysql-zrm-scheduler --now --backup-set dailyrun --backup-level 0
-
+```
 backup incremental:
+```sh
 $ mysql-zrm-scheduler --now --backup-set dailyrun --backup-level 1
-
+```
 
 restore:
+```sh
 $ mysql-zrm --action restore --backup-set dailyrun \
   --source-directory /var/lib/mysql-zrm/dailyrun/20151017093958
+```
